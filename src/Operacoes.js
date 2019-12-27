@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import Button from "@material-ui/core/Button";
+import Input from "@material-ui/core/Input";
 
 import {
   soma,
@@ -25,58 +27,70 @@ const Operacpes = ({
       <span>{`Valor Acumulado: ${resultado}`}</span>
       <br />
       <br />
-      <input
-        defaultValue={valor_operacao}
+      <Input
+        value={valor_operacao}
         onChange={evt => {
           mudarValorOperacao(parseFloat(evt.target.value));
         }}
         type="number"
       />
-      <button
-        onClick={() => {
-          if (!isNaN(valor_operacao)) {
-            onClickSoma(valor_operacao);
-          }
-        }}
-      >
-        +
-      </button>
-      <button
-        onClick={() => {
-          if (!isNaN(valor_operacao)) {
-            onClickSubtracao(valor_operacao);
-          }
-        }}
-      >
-        -
-      </button>
-      <button
-        onClick={() => {
-          if (!isNaN(valor_operacao)) {
-            onclickMultiplicacao(valor_operacao);
-          }
-        }}
-      >
-        *
-      </button>
-      <button
-        onClick={() => {
-          if (!isNaN(valor_operacao) && valor_operacao !== 0) {
-            onClickDivisao(valor_operacao);
-          }
-        }}
-      >
-        /
-      </button>
-      <button
-        onClick={() => {
-          if (!isNaN(valor_operacao) && valor_operacao !== 0) {
-            onClickPow(valor_operacao);
-          }
-        }}
-      >
-        POW
-      </button>
+      <div className="container">
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => {
+            if (!isNaN(valor_operacao)) {
+              onClickSoma(valor_operacao);
+            }
+          }}
+        >
+          +
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => {
+            if (!isNaN(valor_operacao)) {
+              onClickSubtracao(valor_operacao);
+            }
+          }}
+        >
+          -
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => {
+            if (!isNaN(valor_operacao)) {
+              onclickMultiplicacao(valor_operacao);
+            }
+          }}
+        >
+          *
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => {
+            if (!isNaN(valor_operacao) && valor_operacao !== 0) {
+              onClickDivisao(valor_operacao);
+            }
+          }}
+        >
+          /
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => {
+            if (!isNaN(valor_operacao) && valor_operacao !== 0) {
+              onClickPow(valor_operacao);
+            }
+          }}
+        >
+          POW
+        </Button>
+      </div>
     </div>
   );
 };
