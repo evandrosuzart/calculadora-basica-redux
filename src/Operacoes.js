@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
-import { Creators as actions } from "./store/ducks/numberRedulcer";
+import { Creators as actions } from "./store/ducks/numberReducer";
 const Operacpes = ({
   resultado,
   valor_operacao,
@@ -17,6 +17,7 @@ const Operacpes = ({
   onClickFatorial,
   onClickFibonacci
 }) => {
+  console.log(actions);
   return (
     <div>
       <span>{`Valor Acumulado: ${resultado}`}</span>
@@ -115,14 +116,14 @@ const Operacpes = ({
 };
 
 const mapDispatchToProps = {
-  onClickSoma: actions.soma,
-  onClickSubtracao: actions.subtracao,
-  onClickDivisao: actions.divisao,
-  onclickMultiplicacao: actions.multiplicacao,
-  mudarValorOperacao: actions.mudar_valor_operacao,
-  onClickPow: actions.pow,
-  onClickFatorial: actions.fatorial,
-  onClickFibonacci: actions.fibonacci
+  onClickSoma: actions.type_soma,
+  onClickSubtracao: actions.type_subtracao,
+  onClickDivisao: actions.type_divisao,
+  onclickMultiplicacao: actions.type_multiplicacao,
+  mudarValorOperacao: actions.type_mudar_valor_operacao,
+  onClickPow: actions.type_pow,
+  onClickFatorial: actions.type_fatorial,
+  onClickFibonacci: actions.type_fibonacci
 };
 const mapStateToProps = state => ({
   resultado: state.resultado,

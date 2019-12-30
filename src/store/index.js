@@ -2,10 +2,10 @@ import { createStore, applyMiddleware } from "redux";
 import { logger } from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { numberRedulcer } from "./ducks/numberRedulcer";
+import { numberReducer } from "./ducks/numberReducer";
 
 const store = createStore(
-  numberRedulcer,
+  numberReducer,
   composeWithDevTools(applyMiddleware(logger))
 );
 
